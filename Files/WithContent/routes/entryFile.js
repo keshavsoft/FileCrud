@@ -4,7 +4,7 @@ var router = express.Router();
 
 import {
     PostFunc
-} from '../controllers/entryFile.js';
+} from '../Controllers/entryFile.js';
 
 router.post('/:FileName', PostFunc);
 
