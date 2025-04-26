@@ -2,20 +2,14 @@ import fs from "fs";
 import { StartFunc as StartFuncCommonExpose } from "../../../CommonExpose/returnRootDir.js";
 const CommonDataPath = "Data";
 
-let StartFunc = ({ inFileName, inName, inMobile }) => {
+let StartFunc = ({ inFileName, inInsertData }) => {
     const LocalFileName = inFileName;
-    let LocalName = inName;
-    let LocalMobile = inMobile;
-
-    let ObjectData = { Name: LocalName, Mobile: LocalMobile };
-    console.log(ObjectData);
-
+    let LocalInsertData = inInsertData;
+    let LocalReturnData = { KTF: false };
     const LocalDataPath = StartFuncCommonExpose();
 
-    let LocalReturnData = { KTF: false };
-
     try {
-        fs.writeFileSync(`${LocalDataPath}/${CommonDataPath}/${LocalFileName}.json`, JSON.stringify(ObjectData), { flag: 'wx' });
+        fs.writeFileSync(`${LocalDataPath}/${CommonDataPath}/${LocalFileName}.json`, JSON.stringify(LocalInsertData), { flag: 'wx' });
 
         LocalReturnData.KTF = true;
     } catch (err) {
