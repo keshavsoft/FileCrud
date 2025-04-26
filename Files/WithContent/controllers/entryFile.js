@@ -5,11 +5,8 @@ import {
 let PostFunc = (req, res) => {
     const LocalFileName = req.params.FileName;
     const LocalBody = req.body;
-    const LocalName = LocalBody.Name;
-    const LocalMobile = LocalBody.Mobile;
 
-    let LocalFromRepo = PostFuncRepo({ inFileName: LocalFileName, inName: LocalName, inMobile: LocalMobile });
-console.log("LocalFromRepo:",LocalFromRepo);
+    let LocalFromRepo = PostFuncRepo({ inFileName: LocalFileName, inInsertData: LocalBody });
 
     if (LocalFromRepo.KTF === false) {
         res.status(409).send(LocalFromRepo.KReason);
