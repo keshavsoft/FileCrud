@@ -3,14 +3,11 @@ import { StartFunc as StartFuncCommonExpose } from "../../../CommonExpose/return
 const CommonDataPath = "Data";
 
 let StartFunc = ({ inFileName, inName, inMobile }) => {
-console.log("naaaa");
-    
     const LocalFileName = inFileName;
     let LocalName = inName;
     let LocalMobile = inMobile;
-    console.log(LocalFileName,LocalName,LocalMobile);
-    
-    let ObjectData = { LocalName: LocalName, LocalMobile: LocalMobile };
+
+    let ObjectData = { Name: LocalName, Mobile: LocalMobile };
     console.log(ObjectData);
 
     const LocalDataPath = StartFuncCommonExpose();
@@ -18,7 +15,7 @@ console.log("naaaa");
     let LocalReturnData = { KTF: false };
 
     try {
-        fs.writeFileSync(`${LocalDataPath}/${CommonDataPath}/${LocalFileName}.json`, JSON.stringify({}), { flag: 'wx' });
+        fs.writeFileSync(`${LocalDataPath}/${CommonDataPath}/${LocalFileName}.json`, JSON.stringify(ObjectData), { flag: 'wx' });
 
         LocalReturnData.KTF = true;
     } catch (err) {
