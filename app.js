@@ -1,0 +1,16 @@
+import express from 'express';
+const app = express()
+const port = 3000;
+import { router as routerFromTasks } from "./Tasks/routes.js";
+import { router as routerFromFiles } from "./Files/routes.js";
+
+app.get('/', (req, res) => {
+    res.send('Hello World!')
+});
+
+app.use('/Tasks', routerFromTasks);
+app.use('/Files', routerFromFiles);
+
+app.listen(port, () => {
+    console.log(`Example app listening on port ${port}`)
+});
