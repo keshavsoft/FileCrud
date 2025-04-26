@@ -1,6 +1,6 @@
 import {
     PostFunc as PostFuncRepo
-} from '../repos/entryFile.js';
+} from '../Repos/entryFile.js';
 
 let PostFunc = (req, res) => {
     const LocalFileName = req.params.FileName;
@@ -9,9 +9,10 @@ let PostFunc = (req, res) => {
     const LocalMobile = LocalBody.Mobile;
 
     let LocalFromRepo = PostFuncRepo({ inFileName: LocalFileName, inName: LocalName, inMobile: LocalMobile });
+console.log("LocalFromRepo:",LocalFromRepo);
 
     if (LocalFromRepo.KTF === false) {
-        res.status(500).send(LocalFromRepo.KReason);
+        res.status(409).send(LocalFromRepo.KReason);
         return;
     };
 

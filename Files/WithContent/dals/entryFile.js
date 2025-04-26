@@ -1,4 +1,4 @@
-import { StartFunc as ReadFromFile } from '../kLowDb/createFile.js';
+import { StartFunc as ReadFromFile } from '../KFs/createFile.js';
 
 let PostFunc = ({ inFileName, inName, inMobile }) => {
     let LocalFromLowDb = ReadFromFile({ inFileName, inName, inMobile });

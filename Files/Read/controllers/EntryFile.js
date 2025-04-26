@@ -1,6 +1,6 @@
 import {
     GetFunc as GetFuncRepo
-} from '../repos/EntryFile.js';
+} from '../Repos/entryFile.js';
 
 let GetFunc = (req, res) => {
     const LocalFileName = req.params.FileName;

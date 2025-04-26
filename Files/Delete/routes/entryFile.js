@@ -4,7 +4,7 @@ var router = express.Router();
 
 import {
     DeleteFunc
-} from '../controllers/entryFile.js';
+} from '../Controllers/entryFile.js';
 
 router.delete('/:FileName', DeleteFunc);
 
