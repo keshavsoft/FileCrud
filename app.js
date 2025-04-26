@@ -4,6 +4,8 @@ const port = 3000;
 import bodyparser from "body-parser";
 import { router as routerFromTasks } from "./Tasks/routes.js";
 import { router as routerFromFiles } from "./Files/routes.js";
+import { router as routerFileContent } from "./FileContent/routes.js";
+
 app.use(bodyparser.json());
 
 app.get('/', (req, res) => {
@@ -12,6 +14,7 @@ app.get('/', (req, res) => {
 
 app.use('/Tasks', routerFromTasks);
 app.use('/Files', routerFromFiles);
+app.use('/FileContent', routerFileContent);
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
