@@ -1,7 +1,7 @@
-POST http://localhost:3000/FileContent/Insert/test2
+POST http://localhost:3000/FileContent/Insert/test1
 Content-Type: application/json
 
 {
-  "Key":"Annam",
-  "Value":"Jam Stack"
+  "Key":"Mobile",
+  "Value":9848163021
 }
