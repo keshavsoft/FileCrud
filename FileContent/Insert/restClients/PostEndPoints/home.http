@@ -2,6 +2,6 @@ POST http://localhost:3000/FileContent/Insert/test2
 Content-Type: application/json
 
 {
-  "Key":"1234567890@c.us",
-  "Value":"Anantha-------"
+  "Key":"Annam",
+  "Value":"Jam Stack"
 }
