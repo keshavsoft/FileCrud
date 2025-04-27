@@ -3,11 +3,11 @@ const router = express.Router();
 
 import { router as routerFromInsert } from "./Insert/routes.js";
 import { router as routerFromRead } from "./Read/routes.js";
-// import { router as routerFromDelete } from "./Delete/routes.js";
+import { router as routerFromDelete } from "./Delete/routes.js";
 
 router.use("/Insert", routerFromInsert);
 router.use("/Read", routerFromRead);
-// router.use("/Delete", routerFromDelete);
+router.use("/Delete", routerFromDelete);
 
 export {
     router
