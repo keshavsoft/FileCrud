@@ -15,9 +15,14 @@ let StartFunc = ({ inFileName }) => {
     } catch (err) {
         if (err.code === 'EEXIST') {
             console.log('File already exists.');
+            LocalReturnData.KReason = "File already exists.";
+            return LocalReturnData;
+
         } else {
             console.error('Error creating file:', err);
-        }
+            LocalReturnData.KReason = err;
+            return LocalReturnData;
+        };
     };
 
     return LocalReturnData;

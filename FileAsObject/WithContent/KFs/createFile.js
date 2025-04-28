@@ -23,7 +23,7 @@ let StartFunc = ({ inFileName, inInsertData }) => {
             console.error('Error creating file:', err);
             LocalReturnData.KReason = err;
             return LocalReturnData;
-        }
+        };
     };
 
     return LocalReturnData;
