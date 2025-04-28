@@ -14,7 +14,7 @@ const StartFunc = ({ inKey, inValue, inFileName }) => {
     if (fs.existsSync(filePath)) {
       const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
 
-      if (inKey in data) {
+      if (inKey in data === false) {
         LocalReturnObject.KReason = "Key already present";
 
         return LocalReturnObject;
@@ -28,11 +28,14 @@ const StartFunc = ({ inKey, inValue, inFileName }) => {
 
       return LocalReturnObject;
     } else {
-      console.warn(`File ${filePath} does not exist.`);
-    }
+      LocalReturnObject.KReason = `File ${filePath} does not exist.`;
+      console.warn(LocalReturnObject.KReason);
+
+      return LocalReturnObject;
+    };
   } catch (err) {
     console.error('Error:', err);
-  }
+  };
 
   return LocalReturnObject;
 };

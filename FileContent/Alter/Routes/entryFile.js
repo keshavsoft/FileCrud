@@ -4,9 +4,9 @@ var router = express.Router();
 
 import {
     postFilterDataFromBodyFunc
-} from '../controllers/entryFile.js';
+} from '../Controllers/entryFile.js';
 
-import { StartFunc as middlewarespostFilterDataFromBodyFunc } from "../middlewares/entryFile.js";
+import { StartFunc as middlewarespostFilterDataFromBodyFunc } from "../Middlewares/entryFile.js";
 
 router.post('/:FileName', middlewarespostFilterDataFromBodyFunc, postFilterDataFromBodyFunc);
 

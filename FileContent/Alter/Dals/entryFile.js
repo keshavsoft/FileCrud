@@ -1,4 +1,4 @@
-import { StartFunc as StartFuncFromInsertToFile } from '../kLowDb/insertToFile.js';
+import { StartFunc as StartFuncFromInsertToFile } from '../KFs/insertToFile.js';
 
 let postDefaultFunc = ({ inKey, inValue, inFileName }) => {
     let LocalFromLowDb = StartFuncFromInsertToFile({ inKey, inValue, inFileName });
