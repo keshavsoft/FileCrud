@@ -3,3 +3,5 @@ Data/*
 .vscode
 
 .log
+
+node_modules
