@@ -15,7 +15,7 @@ const StartFunc = ({ inKey, inValue, inFileName }) => {
       const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
 
       if (inKey in data === false) {
-        LocalReturnObject.KReason = "Key already present";
+        LocalReturnObject.KReason = "Key not present to alter...";
 
         return LocalReturnObject;
       };
