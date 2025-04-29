@@ -1,0 +1,7 @@
+POST http://localhost:3000/FileAsArrayContent/Alter/test9
+Content-Type: application/json
+
+{
+  "Key":"Name",
+  "Value":"Sree"
+}
