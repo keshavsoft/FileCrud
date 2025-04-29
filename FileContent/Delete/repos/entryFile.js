@@ -4,7 +4,7 @@ import {
 
 let postDefaultFunc = async ({ inKey, inFileName }) => {
     return postDefaultFuncFromDal({ inKey, inFileName });
-};k
+};
 
 export {
     postDefaultFunc
