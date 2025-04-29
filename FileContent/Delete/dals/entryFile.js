@@ -1,4 +1,4 @@
-import { StartFunc as StartFuncFromDeleteFromFile } from '../kLowDb/deleteFromFile.js';
+import { StartFunc as StartFuncFromDeleteFromFile } from '../KLowDb/deleteFromFile.js';
 
 let postDefaultFunc = ({ inKey, inFileName }) => {
     let LocalFromLowDb = StartFuncFromDeleteFromFile({ inKey, inFileName });

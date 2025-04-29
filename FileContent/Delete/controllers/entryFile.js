@@ -1,6 +1,6 @@
 import {
     postDefaultFunc as postDefaultFuncFromRepo
-} from '../repos/entryFile.js';
+} from '../Repos/entryFile.js';
 
 let postFilterDataFromBodyFunc = async (req, res) => {
     let LocalParam = req.params.FileName;
