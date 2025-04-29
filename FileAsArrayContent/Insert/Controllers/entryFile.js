@@ -5,12 +5,9 @@ import {
 let postFilterDataFromBodyFunc = (req, res) => {
     let LocalParam = req.params.FileName;
     let LocalRequestBody = req.body;
-    let LocalKey = LocalRequestBody.Key;
-    let LocalValue = LocalRequestBody.Value
 
     let LocalFromRepo = postDefaultFuncFromRepo({
-        inKey: LocalKey,
-        inValue: LocalValue, inFileName: LocalParam
+        inRequestBody: LocalRequestBody, inFileName: LocalParam
     });
 
     if (LocalFromRepo.KTF === false) {
