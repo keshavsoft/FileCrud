@@ -1,11 +1,11 @@
 const StartFunc = (req, res, next) => {
-    const { Key: LocalKey, Value: LocalValue } = req.body;
+    const LocalBody = req.body;
 
-    if (!LocalKey || !LocalValue) {
+    if (!LocalBody) {
         return res.status(404).json({
             KTF: false,
             KReason: "Post request body should contain:",
-            body: !LocalKey ? "Key" : "Value"
+            body: "LocalBody"
         });
     }
 

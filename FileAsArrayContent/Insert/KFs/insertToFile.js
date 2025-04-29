@@ -2,8 +2,9 @@ import fs from "fs";
 import { StartFunc as StartFuncCommonExpose } from "../../../CommonExpose/returnRootDir.js";
 const CommonDataPath = "Data";
 
-const StartFunc = ({ inKey, inValue, inFileName }) => {
+const StartFunc = ({ inRequestBody, inFileName }) => {
   const LocalFileName = inFileName;
+  let LocalinDataToInsert = inRequestBody;
   const LocalDataPath = StartFuncCommonExpose();
 
   const filePath = `${LocalDataPath}/${CommonDataPath}/${LocalFileName}.json`;
@@ -14,13 +15,7 @@ const StartFunc = ({ inKey, inValue, inFileName }) => {
     if (fs.existsSync(filePath)) {
       const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
 
-      if (inKey in data) {
-        LocalReturnObject.KReason = "Key already present";
-
-        return LocalReturnObject;
-      };
-
-      data[inKey] = inValue;
+      data.push(LocalinDataToInsert);
 
       fs.writeFileSync(filePath, JSON.stringify(data, null, 2), 'utf8');
 
