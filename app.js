@@ -6,6 +6,7 @@ import { router as routerFromTasks } from "./Tasks/routes.js";
 import { router as routerFromFiles } from "./FileAsObject/routes.js";
 import { router as routerFileContent } from "./FileContent/routes.js";
 import { router as routerFileAsArray } from "./FileAsArray/routes.js";
+import { router as routerFileAsArrayContent } from "./FileAsArrayContent/routes.js";
 
 app.use(bodyparser.json());
 
@@ -17,6 +18,7 @@ app.use('/Tasks', routerFromTasks);
 app.use('/FileAsObject', routerFromFiles);
 app.use('/FileContent', routerFileContent);
 app.use('/FileAsArray', routerFileAsArray);
+app.use('/FileAsArrayContent', routerFileAsArrayContent);
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
