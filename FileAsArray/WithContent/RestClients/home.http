@@ -1,8 +1,14 @@
-POST http://localhost:3000/FileAsArray/WithContent/test9
+POST http://localhost:3000/FileAsArray/WithContent/test6
 Content-Type: application/json
 
+[
 {
     "Name":"Keshav",
     "Mobile":9848163021,
     "Other":""
-}
+},
+{
+    "Name":"Srinivas",
+    "Mobile":9848163021,
+    "Other":""
+}]

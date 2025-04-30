@@ -7,9 +7,10 @@ let StartFunc = ({ inFileName, inInsertData }) => {
     let LocalInsertData = inInsertData;
     let LocalReturnData = { KTF: false };
     const LocalDataPath = StartFuncCommonExpose();
+    const LocalFilePath = `${LocalDataPath}/${CommonDataPath}/${LocalFileName}.json`;
 
     try {
-        fs.writeFileSync(`${LocalDataPath}/${CommonDataPath}/${LocalFileName}.json`, JSON.stringify([LocalInsertData]), { flag: 'wx' });
+        fs.writeFileSync(LocalFilePath, JSON.stringify(LocalInsertData), { flag: 'wx' });
 
         LocalReturnData.KTF = true;
         return LocalReturnData;
