@@ -7,17 +7,25 @@ let StartFunc = ({ inFileName }) => {
     const LocalDataPath = StartFuncCommonExpose();
 
     let LocalReturnData = { KTF: false };
-    const data = fs.readFileSync(`${LocalDataPath}/${CommonDataPath}/${LocalFileName}.json`, 'utf8');
+    const filePath = `${LocalDataPath}/${CommonDataPath}/${LocalFileName}.json`;
 
-    try {
-        LocalReturnData.KTF = true;
-        LocalReturnData.JsonData = data;
-    } catch (err) {
-        if (err.code === 'EEXIST') {
-            console.log('File already exists.');
-        } else {
-            console.error('Error creating file:', err);
-        }
+    if (fs.existsSync(filePath)) {
+        try {
+            const data = fs.readFileSync(`${filePath}`, 'utf8');
+
+            LocalReturnData.KTF = true;
+            LocalReturnData.JsonData = data;
+        } catch (err) {
+            if (err.code === 'EEXIST') {
+                console.log('File already exists.');
+            } else {
+                console.error('Error creating file:', err);
+            }
+        };
+    } else {
+        LocalReturnData.KReason = `No File ${LocalFileName}.`
+
+        console.warn(LocalReturnData.KReason);
     };
 
     return LocalReturnData;
