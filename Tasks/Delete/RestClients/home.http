@@ -1,0 +1,7 @@
+DELETE http://localhost:3000/Tasks/Delete/test1
+Content-Type: application/json
+
+{
+  "Key":"Title",
+  "Value":"Sree"
+}
