@@ -5,3 +5,5 @@ Data/*
 .log
 
 node_modules
+
+public
