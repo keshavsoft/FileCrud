@@ -1,5 +1,6 @@
 import fs from "fs";
 import { StartFunc as StartFuncCommonExpose } from "../../../CommonExpose/returnRootDir.js";
+import { Console } from "console";
 const CommonDataPath = "Data";
 
 let StartFunc = ({ inFileName, inInsertData }) => {
@@ -12,11 +13,12 @@ let StartFunc = ({ inFileName, inInsertData }) => {
         fs.writeFileSync(`${LocalDataPath}/${CommonDataPath}/${LocalFileName}.json`, JSON.stringify(LocalInsertData), { flag: 'wx' });
 
         LocalReturnData.KTF = true;
-        return LocalReturnData;
+        LocalReturnData.JsonData = `${LocalFileName}.json File Created Successfully`;
+        console.log(`${LocalFileName}.json File Created Successfully`);
     } catch (err) {
         if (err.code === 'EEXIST') {
-            console.log('File already exists.');
-            LocalReturnData.KReason = "File already exists.";
+            console.log(`${LocalFileName}.json File already exists.`);
+            LocalReturnData.KReason = `${LocalFileName}.json File already exists.`;
             return LocalReturnData;
 
         } else {
