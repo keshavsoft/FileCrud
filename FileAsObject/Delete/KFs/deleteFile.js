@@ -14,12 +14,13 @@ let StartFunc = ({ inFileName }) => {
             fs.unlinkSync(filePath);
             LocalReturnData.KTF = true;
             console.log(`${LocalFileName}.json has been successfully deleted.`);
+            LocalReturnData.KReason = `File ${LocalFileName}.json does not exist.`;
         } catch (err) {
             LocalReturnData.KReason = err.message;
             console.error(`Error deleting ${LocalFileName}.json:`, err.message);
         };
     } else {
-        LocalReturnData.KReason = `File ${LocalFileName}.json does not exist.`
+        LocalReturnData.KReason = `File ${LocalFileName}.json does not exist.`;
 
         console.warn(LocalReturnData.KReason);
     };
