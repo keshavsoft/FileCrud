@@ -15,7 +15,16 @@ const StartFunc = ({ inRequestBody, inFileName }) => {
     if (fs.existsSync(filePath)) {
       const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
 
+      const alreadyExists = data.some(item => JSON.stringify(item) === JSON.stringify(LocalinDataToInsert));
+
+      if (alreadyExists) {
+        LocalReturnObject.KReason = "Duplicate entry: This exact data already exists.";
+        return LocalReturnObject;
+      }
+
       data.push(LocalinDataToInsert);
+
+      LocalReturnObject.JsonData = "Data inserted Successfully."
 
       fs.writeFileSync(filePath, JSON.stringify(data, null, 2), 'utf8');
 
