@@ -8,7 +8,7 @@ let StartFunc = ({ inFileName }) => {
 
     let LocalReturnData = { KTF: false };
     const filePath = `${LocalDataPath}/${CommonDataPath}/${LocalFileName}.json`;
-    console.log(filePath)
+    
     if (fs.existsSync(filePath)) {
         try {
             const data = fs.readFileSync(`${filePath}`, 'utf8');
@@ -16,7 +16,7 @@ let StartFunc = ({ inFileName }) => {
             LocalReturnData.KTF = true;
             LocalReturnData.JsonData = data;
         } catch (err) {
-            console.log(`Error reading ${LocalFileName} file: ${err}`);
+            console.warn(`Error reading ${LocalFileName} file: ${err}`);
             LocalReturnData.KReason = `Error reading ${LocalFileName} file: ${err}`;
         };
     } else {
