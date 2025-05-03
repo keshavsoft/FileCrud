@@ -25,8 +25,9 @@ const StartFunc = ({ inKey, inValue, inFileName }) => {
       fs.writeFileSync(filePath, JSON.stringify(data, null, 2), 'utf8');
 
       LocalReturnObject.KTF = true;
-
+      LocalReturnObject.JsonData = "Inserted successfully";
       return LocalReturnObject;
+
     } else {
       LocalReturnObject.KReason = `File ${filePath} does not exist.`;
       console.warn(LocalReturnObject.KReason);
