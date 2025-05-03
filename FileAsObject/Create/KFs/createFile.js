@@ -14,7 +14,7 @@ let StartFunc = ({ inFileName }) => {
         LocalReturnData.KReason = `${LocalFileName}.json created successfully.`;
     } catch (err) {
         if (err.code === 'EEXIST') {
-            LocalReturnData.KReason = "File already exists.";
+            LocalReturnData.KReason =`${LocalFileName}.json File already exists.`;
             return LocalReturnData;
 
         } else {
