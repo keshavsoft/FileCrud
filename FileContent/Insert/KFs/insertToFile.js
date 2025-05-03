@@ -28,7 +28,7 @@ const StartFunc = ({ inKey, inValue, inFileName }) => {
 
       return LocalReturnObject;
     } else {
-      LocalReturnObject.KReason = `File ${filePath} does not exist.`;
+      LocalReturnObject.KReason = `File ${LocalFileName} does not exist.`;
       console.warn(LocalReturnObject.KReason);
 
       return LocalReturnObject;
