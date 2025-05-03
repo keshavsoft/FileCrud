@@ -28,7 +28,7 @@ const StartFunc = ({ inRequestBody, inFileName }) => {
       fs.writeFileSync(filePath, JSON.stringify(data, null, 2), 'utf8');
 
       LocalReturnObject.KTF = true;
-
+      LocalReturnObject.JsonData = `Inserted Pk And UuId In To ${LocalFileName}.json `
       return LocalReturnObject;
     } else {
       LocalReturnObject.KReason = `File ${filePath} does not exist.`;
