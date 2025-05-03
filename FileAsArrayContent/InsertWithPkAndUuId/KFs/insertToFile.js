@@ -31,7 +31,7 @@ const StartFunc = ({ inRequestBody, inFileName }) => {
       LocalReturnObject.JsonData = `Inserted Pk And UuId In To ${LocalFileName}.json `
       return LocalReturnObject;
     } else {
-      LocalReturnObject.KReason = `File ${filePath} does not exist.`;
+      LocalReturnObject.KReason = `File ${LocalFileName}.json does not exist.`;
       console.warn(LocalReturnObject.KReason);
 
       return LocalReturnObject;

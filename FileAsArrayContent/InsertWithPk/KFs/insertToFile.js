@@ -19,19 +19,21 @@ const StartFunc = ({ inRequestBody, inFileName }) => {
       let LocalRemoveUndefined = LocalArrayPk.filter(function (element) {
         return element !== undefined;
       });
-      let numberArray = LocalRemoveUndefined.map(Number);
 
-      let MaxPk = (Math.max(...numberArray, 0) + 1);
+      let numberArray = LocalRemoveUndefined.map(Number);
+      let MaxPk = Math.max(...numberArray, 0) + 1;
+
       let LocalInsertData = { ...LocalinDataToInsert, pk: MaxPk };
       data.push(LocalInsertData);
 
       fs.writeFileSync(filePath, JSON.stringify(data, null, 2), 'utf8');
 
       LocalReturnObject.KTF = true;
+      LocalReturnObject.JsonData = `Inserted pk ${MaxPk} In To ${LocalFileName}.json`;
 
       return LocalReturnObject;
     } else {
-      LocalReturnObject.KReason = `File ${filePath} does not exist.`;
+      LocalReturnObject.KReason = `File ${LocalFileName}.json does not exist.`;
       console.warn(LocalReturnObject.KReason);
 
       return LocalReturnObject;
