@@ -12,16 +12,15 @@ let StartFunc = ({ inFileName }) => {
         fs.writeFileSync(`${LocalDataPath}/${CommonDataPath}/${LocalFileName}.json`, JSON.stringify([]), { flag: 'wx' });
 
         LocalReturnData.KTF = true;
-        LocalReturnData.JsonData = `${LocalFileName} file was Created in ${CommonDataPath} folder`;
+        LocalReturnData.JsonData = `${LocalFileName}.json file was created in ${CommonDataPath} folder`; 
     } catch (err) {
         if (err.code === 'EEXIST') {
-            console.log(`${LocalFileName} file already exists.`);
-            LocalReturnData.KReason = `${LocalFileName} file already exists.`;
+            console.log(`${LocalFileName}.json file already exists.`); 
+            LocalReturnData.KReason = `${LocalFileName}.json file already exists.`; 
             return LocalReturnData;
-
         } else {
-            console.error(`Error creating ${LocalFileName} file: , ${err}`);
-            LocalReturnData.KReason =`Error creating ${LocalFileName} file: , ${err}`;
+            console.error(`Error creating ${LocalFileName}.json file: , ${err}`); 
+            LocalReturnData.KReason = `Error creating ${LocalFileName}.json file: , ${err}`;
             return LocalReturnData;
         };
     };

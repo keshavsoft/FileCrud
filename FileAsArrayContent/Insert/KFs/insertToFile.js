@@ -24,22 +24,21 @@ const StartFunc = ({ inRequestBody, inFileName }) => {
 
       data.push(LocalinDataToInsert);
 
-      LocalReturnObject.JsonData = "Data inserted Successfully."
-
       fs.writeFileSync(filePath, JSON.stringify(data, null, 2), 'utf8');
 
       LocalReturnObject.KTF = true;
+      LocalReturnObject.JsonData = `Inserted In To ${LocalFileName}.json`;
 
       return LocalReturnObject;
     } else {
-      LocalReturnObject.KReason = `File ${filePath} does not exist.`;
+      LocalReturnObject.KReason = `File ${LocalFileName}.json does not exist.`;
       console.warn(LocalReturnObject.KReason);
 
       return LocalReturnObject;
-    };
+    }
   } catch (err) {
     console.error('Error:', err);
-  };
+  }
 
   return LocalReturnObject;
 };
