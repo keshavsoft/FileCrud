@@ -8,7 +8,7 @@ let StartFunc = ({ inFileName }) => {
 
     let LocalReturnData = { KTF: false };
     const filePath = `${LocalDataPath}/${CommonDataPath}/${LocalFileName}.json`;
-    
+
     if (fs.existsSync(filePath)) {
         try {
             const data = fs.readFileSync(`${filePath}`, 'utf8');
@@ -20,7 +20,7 @@ let StartFunc = ({ inFileName }) => {
             LocalReturnData.KReason = `Error reading ${LocalFileName} file: ${err}`;
         };
     } else {
-        LocalReturnData.KReason = `${LocalFileName}.json file doesnt exist.`
+        LocalReturnData.KReason = `${LocalFileName}.json file doesnt exist in ${CommonDataPath} folder.`
 
         console.warn(LocalReturnData.KReason);
     };

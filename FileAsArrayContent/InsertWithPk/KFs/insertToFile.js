@@ -33,7 +33,7 @@ const StartFunc = ({ inRequestBody, inFileName }) => {
 
       return LocalReturnObject;
     } else {
-      LocalReturnObject.KReason = `File ${LocalFileName}.json does not exist.`;
+      LocalReturnObject.KReason = `File ${LocalFileName}.json does not exist in ${CommonDataPath} folder.`;
       console.warn(LocalReturnObject.KReason);
 
       return LocalReturnObject;

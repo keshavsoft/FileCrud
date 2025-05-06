@@ -31,7 +31,7 @@ const StartFunc = ({ inKey, inValue, inFileName }) => {
     fs.writeFileSync(filePath, JSON.stringify(data, null, 2), 'utf8');
 
     LocalReturnObject.KTF = true;
-    LocalReturnObject.JsonData=` Data altered successfully`
+    LocalReturnObject.JsonData=`Data altered successfully`
   } catch (err) {
     LocalReturnObject.KReason = `Error occurred: ${err.message}`;
     console.error("Error:", err);
