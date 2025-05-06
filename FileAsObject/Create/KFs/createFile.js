@@ -11,10 +11,10 @@ let StartFunc = ({ inFileName }) => {
     try {
         fs.writeFileSync(`${LocalDataPath}/${CommonDataPath}/${LocalFileName}.json`, JSON.stringify({}), { flag: 'wx' });
         LocalReturnData.KTF = true;
-        LocalReturnData.KReason = `${LocalFileName}.json created successfully.`;
+        LocalReturnData.KReason = `${LocalFileName}.json created successfully in ${CommonDataPath} folder.`;
     } catch (err) {
         if (err.code === 'EEXIST') {
-            LocalReturnData.KReason =`${LocalFileName}.json File already exists.`;
+            LocalReturnData.KReason = `${LocalFileName}.json File already exists in ${CommonDataPath} folder.`;
             return LocalReturnData;
 
         } else {
