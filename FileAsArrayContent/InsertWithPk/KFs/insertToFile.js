@@ -29,7 +29,7 @@ const StartFunc = ({ inRequestBody, inFileName }) => {
       fs.writeFileSync(filePath, JSON.stringify(data, null, 2), 'utf8');
 
       LocalReturnObject.KTF = true;
-      LocalReturnObject.JsonData = `Inserted pk ${MaxPk} In To ${LocalFileName}.json`;
+      LocalReturnObject.JsonData = `Inserted pk ${MaxPk} In To ${LocalFileName}.json successfully`;
 
       return LocalReturnObject;
     } else {
