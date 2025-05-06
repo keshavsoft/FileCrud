@@ -8,6 +8,8 @@ import { router as routerFromDelete } from "./Delete/routes.js";
 import { router as routerFromInsertWithPk } from "./InsertWithPk/routes.js";
 import { router as routerFromInsertWithUuId } from "./InsertWithUuId/routes.js";
 import { router as routerFromInsertWithPkAndUuId } from "./InsertWithPkAndUuId/routes.js";
+import { router as routerFromRowDataWithPk } from "./RowDataWithPk/routes.js";
+import { router as routerFromRowDataWithUuId } from "./RowDataWithUuId/routes.js";
 
 router.use("/Alter", routerFromAlter);
 router.use("/Insert", routerFromInsert);
@@ -16,6 +18,8 @@ router.use("/Delete", routerFromDelete);
 router.use("/InsertWithPk", routerFromInsertWithPk);
 router.use("/InsertWithUuId", routerFromInsertWithUuId);
 router.use("/InsertWithPkAndUuId", routerFromInsertWithPkAndUuId);
+router.use("/RowDataWithPk", routerFromRowDataWithPk);
+router.use("/RowDataWithUuId", routerFromRowDataWithUuId);
 
 export {
     router
