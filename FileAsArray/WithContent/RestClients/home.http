@@ -1,4 +1,5 @@
 POST http://localhost:3000/FileAsArray/WithContent/test98
 Content-Type: application/json
 
-{}
+[{"name":"eswar"}]
+   

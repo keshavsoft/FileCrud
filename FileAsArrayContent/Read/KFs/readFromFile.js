@@ -11,7 +11,7 @@ let StartFunc = ({ inFileName }) => {
     try {
         
         if (!fs.existsSync(filePath)) {
-            LocalReturnData.KReason = `${LocalFileName} File does not exist in Data Folder .`;
+            LocalReturnData.KReason = `${LocalFileName}.json File does not exist in ${CommonDataPath} Folder.`;
             console.warn(LocalReturnData.KReason);
             return LocalReturnData;
         }
