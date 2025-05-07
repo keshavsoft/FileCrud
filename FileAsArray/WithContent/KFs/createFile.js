@@ -13,7 +13,7 @@ let StartFunc = ({ inFileName, inInsertData }) => {
         fs.writeFileSync(LocalFilePath, JSON.stringify(LocalInsertData), { flag: 'wx' });
 
         LocalReturnData.KTF = true;
-        LocalReturnData.JsonData = `${LocalFileName}.json Created in ${CommonDataPath} folder`;
+        LocalReturnData.JsonData = `${LocalFileName}.json File was Created in ${CommonDataPath} folder`;
         return LocalReturnData;
     } catch (err) {
         if (err.code === 'EEXIST') {
