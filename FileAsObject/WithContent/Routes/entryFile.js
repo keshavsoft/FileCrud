@@ -6,6 +6,8 @@ import {
     PostFunc
 } from '../Controllers/entryFile.js';
 
-router.post('/:FileName', PostFunc);
+import { PostFunc as PostFuncMiddlewares } from "../Middlewares/entryFile.js";
+
+router.post('/:FileName', PostFuncMiddlewares ,PostFunc);
 
 export { router };

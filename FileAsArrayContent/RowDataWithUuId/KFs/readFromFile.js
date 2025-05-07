@@ -13,10 +13,12 @@ let StartFunc = ({ inFileName, inId }) => {
         const data = fs.readFileSync(`${LocalDataPath}/${CommonDataPath}/${LocalFileName}.json`, 'utf8');
 
         let LocalFind = JSON.parse(data).find(el => el.UuId === LocalId);
+        console.log("LocalFind",LocalFind)
         if (!LocalFind) {
             LocalReturnData.KReason = `No Data Found ${LocalId}`;
             return LocalReturnData;
         };
+
 
         LocalReturnData.KTF = true;
         LocalReturnData.JsonData = LocalFind;
