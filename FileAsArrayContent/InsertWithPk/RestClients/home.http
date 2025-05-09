@@ -1,7 +1,7 @@
-POST http://localhost:3000/FileAsArrayContent/InsertWithPk/Tasks
+POST http://localhost:3000/FileAsArrayContent/InsertWithPk/MastersAddOns
 Content-Type: application/json
 
 {
-  "Key":"Mobile1",
-  "Value":9848163021
+   "AddOnService": "MIN STAINS",
+    "AddOnRate": "10"
 }
